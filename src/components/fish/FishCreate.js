@@ -30,7 +30,7 @@ const FishCreate = (props) => {
         e.persist()
 
         setFish(prevFish => {
-            const updatedName = e.target.name
+            const updatedSpecies = e.target.name
             let updatedValue = e.target.value
 
             // the above is enough for string inputs
@@ -40,16 +40,9 @@ const FishCreate = (props) => {
                 updatedValue = parseInt(e.target.value)
             }
 
-            // to handle the checkbox, I need to tell it when to send a true, and when to send a false. I can target it by the unique name(adoptable) and handle it the way checkboxes are meant to be handled.
-            // a checkbox only sends the value 'checked' not the boolean I need
-            if (updatedName === 'adoptable' && e.target.checked) {
-                updatedValue = true
-            } else if (updatedName === 'adoptable' && !e.target.checked) {
-                updatedValue = false
-            }
             
-            // build the fish object, grab the attribute name from the field and assign it the respective value.
-            const updatedFish = { [updatedName] : updatedValue }
+            // build the fish object, grab the attribute species from the field and assign it the respective value.
+            const updatedFish = { [updatedSpecies] : updatedValue }
 
             // keep all the old fish stuff and add the new fish stuff(each keypress)
             return {
@@ -67,7 +60,7 @@ const FishCreate = (props) => {
         // first I want to send the create request
         createFish(user, fish)
             // then navigate the user to the show page if successful
-            .then(res => { navigate(`/fish/${res.data.fish.id}`)})
+            .then(res => { navigate(`/fish/${res.data.fish._id}`)})
             // send a success message
             .then(() => {
                 msgAlert({

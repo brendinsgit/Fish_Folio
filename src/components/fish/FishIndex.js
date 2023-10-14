@@ -59,7 +59,7 @@ const FishIndex = (props) => {
             <Card.Header>{ fish.species }</Card.Header>
             <Card.Body>
                 <Card.Text>
-                    <Link to={`/fish/${fish.id}`} className='btn btn-info'>
+                    <Link to={`/fish/${fish._id}`} className='btn btn-info'>
                         View { fish.location }
                     </Link>
                 </Card.Text>

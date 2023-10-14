@@ -100,7 +100,7 @@ const FishShow = (props) => {
         <>
             <Container className='m-2'>
                 <Card>
-                    <Card.Header>{ fish.fullTitle }</Card.Header>
+                    <Card.Header>{ fish.species }</Card.Header>
                     <Card.Body>
                         <Card.Text>
                             <small>Species: {fish.species}</small><br/>

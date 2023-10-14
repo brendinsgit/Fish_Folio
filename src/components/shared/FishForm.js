@@ -4,9 +4,7 @@
 import { Form, Button, Container } from 'react-bootstrap'
 
 const FishForm = (props) => {
-    // I need several props for a working, reusable form
-    // I need the object itself(fish), a handleChange, a handleSubmit
-    // sometimes it's nice to have a custom heading
+
     const { fish, handleChange, handleSubmit, heading } = props
 
     return (
@@ -18,7 +16,7 @@ const FishForm = (props) => {
                     <Form.Control 
                         placeholder="What is your fish's species?"
                         id="species"
-                        species="species"
+                        name="species"
                         value={ fish.species }
                         onChange={handleChange}
                     />
@@ -28,7 +26,7 @@ const FishForm = (props) => {
                     <Form.Control 
                         placeholder="Where was this fish caught?"
                         id="location"
-                        species="location"
+                        name="location"
                         value={ fish.location }
                         onChange={handleChange}
                     />
@@ -39,8 +37,18 @@ const FishForm = (props) => {
                         type="number"
                         placeholder="How big is your fish?"
                         id="size"
-                        species="size"
+                        name="size"
                         value={ fish.size }
+                        onChange={handleChange}
+                    />
+                </Form.Group>
+                <Form.Group className="m-2">
+                    <Form.Label>Weight:</Form.Label>
+                    <Form.Control 
+                        placeholder="How much does your fish weigh?"
+                        id="weight"
+                        name="weight"
+                        value={ fish.weight }
                         onChange={handleChange}
                     />
                 </Form.Group>
