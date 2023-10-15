@@ -20,11 +20,11 @@ const EditEquipmentModal = (props) => {
         e.persist()
 
         setEquipment(prevEquipment => {
-            const updatedRod = e.target.rod
+            const updatedName = e.target.name
             let updatedValue = e.target.value
 
 
-            const updatedEquipment = { [updatedRod] : updatedValue }
+            const updatedEquipment = { [updatedName] : updatedValue }
 
             return {
                 ...prevEquipment, ...updatedEquipment

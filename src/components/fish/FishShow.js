@@ -88,7 +88,7 @@ const FishShow = (props) => {
                 />
             ))
         } else {
-            equipmentCards = <p>Fish has no equipment, ain't that sad?</p>
+            equipmentCards = <p>You haven't added equipment details to this catch</p>
         }
     }
 
