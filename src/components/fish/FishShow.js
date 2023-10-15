@@ -23,6 +23,8 @@ const equipmentCardContainerLayout = {
     flexFlow: 'row wrap'
 }
 
+
+
 const FishShow = (props) => {
     const [fish, setFish] = useState(null)
     const [editModalShow, setEditModalShow] = useState(false)
@@ -100,16 +102,16 @@ const FishShow = (props) => {
         <>
             <Container className='m-2'>
                 <Card>
-                    <Card.Header>{ fish.species }</Card.Header>
-                    <Card.Body>
+                    <Card.Header style={{ backgroundColor: '#293241', color: '#e0fbfc' }}>{ fish.species }</Card.Header>
+                    <Card.Body style={{ backgroundColor: '#3d5a80', color:'#e0fbfc' }}>
                         <Card.Text>
                             <small>Species: {fish.species}</small><br/>
                             <small>Size: {fish.size}</small><br/>
                             <small>Location: {fish.location}</small><br/>
                         </Card.Text>
                     </Card.Body>
-                    <Card.Footer>
-                        <Button className="m-2" variant="info"
+                    <Card.Footer style={{ backgroundColor: '#3d5a80', color: '#e0fbfc' }}>
+                        <Button style={{ backgroundColor: '#ee6c4d', color: '#e0fbfc' }} className="m-2" variant="info"
                             onClick={() => setEquipmentModalShow(true)}
                         >
                             Add some equipment details!

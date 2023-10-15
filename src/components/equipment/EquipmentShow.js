@@ -38,13 +38,13 @@ const EquipmentShow = (props) => {
     return (
         <>
             <Card className='m-2'>
-                <Card.Header>{equipment.rod}</Card.Header>
-                <Card.Body>
+                <Card.Header style={{ backgroundColor: '#293241', color: '#e0fbfc' }}>{equipment.rod}</Card.Header>
+                <Card.Body style={{ backgroundColor: '#3d5a80', color: '#e0fbfc' }}>
                     <small>{equipment.reel}</small><br/>
                     <small>{equipment.line}</small><br/>
                     <small>{equipment.description}</small><br/>
                 </Card.Body>
-                <Card.Footer>
+                <Card.Footer style={{ backgroundColor: '#3d5a80', color: '#e0fbfc' }}>
                     {
                         user && fish.owner && user._id === fish.owner._id
                         ?

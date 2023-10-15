@@ -12,7 +12,7 @@ import messages from '../shared/AutoDismissAlert/messages'
 const cardContainerLayout = {
     display: 'flex',
     flexFlow: 'row wrap',
-    justifyContent: 'center'
+    justifyContent: 'center',
 }
 
 const FishIndex = (props) => {
@@ -56,22 +56,22 @@ const FishIndex = (props) => {
 
     const fishCards = fish.map(fish => (
         <Card key={ fish.id } style={{ width: '30%', margin: 5 }}>
-            <Card.Header>{ fish.species }</Card.Header>
-            <Card.Body>
+            <Card.Header style={{ backgroundColor: '#293241', color: '#e0fbfc' }}>{ fish.species }</Card.Header>
+            <Card.Body style={{ backgroundColor: '#3d5a80' }}>
                 <Card.Text>
-                    <Link to={`/fish/${fish._id}`} className='btn btn-info'>
+                    <Link to={`/fish/${fish._id}`} className='btn btn-info' style={{ backgroundColor: '#ee6c4d', color: '#e0fbfc' }}>
                         View { fish.location }
                     </Link>
                 </Card.Text>
                 { fish.owner ? 
-                    <Card.Footer>owner: {fish.owner.email}</Card.Footer>
+                    <Card.Footer style={{ backgroundColor: '#3d5a80', color: '#e0fbfc' }}>owner: {fish.owner.email}</Card.Footer>
                 : null }
             </Card.Body>
         </Card>
     ))
 
     return (
-        <div className="container-md" style={ cardContainerLayout }>
+        <div className="container-md" style={{ ...cardContainerLayout, backgroundColor: '#98c1d9' }}>
             { fishCards }
         </div>
     )

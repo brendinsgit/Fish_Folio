@@ -3,7 +3,7 @@ import Nav from 'react-bootstrap/Nav'
 import Navbar from 'react-bootstrap/Navbar'
 import { Link } from 'react-router-dom'
 const linkStyle = {
-    color: 'white',
+    color: '#e0fbfc',
     textDecoration: 'none'
 }
 const authenticatedOptions = (
@@ -48,7 +48,7 @@ const alwaysOptions = (
 )
 
 const Header = ({ user }) => (
-	<Navbar bg='primary' variant='dark' expand='md'>
+	<Navbar variant='dark' expand='md' style={{ backgroundColor: '#3d5a80' }}>
 		<Navbar.Brand className='m-2'>
             <Link to='/' style={linkStyle}>
                 Fish Folio
